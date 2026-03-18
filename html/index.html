@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hunt System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="app" class="hidden">
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="panel" id="panel">
+
+    <div class="panel-header">
+      <div class="header-emblem"></div>
+      <div class="header-text">
+        <h1 class="title">HUNTING SYSTEM
+        <p class="subtitle">Wilderness Tracking System</p>
+      </div>
+      <button class="close-btn" id="closeBtn">✕</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="stats">Stats</button>
+      <button class="tab" data-tab="animals">Animals</button>
+      <button class="tab" data-tab="goals">Goals</button>
+      <button class="tab" data-tab="leaderboard">Leaderboard</button>
+    </div>
+
+    <div class="tab-content active" id="tab-stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-label">Total Sold</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-milestones">0</div>
+          <div class="stat-label">Milestones</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-earnings">$0</div>
+          <div class="stat-label">Total Earned</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-cycle">0</div>
+          <div class="stat-label">Current Cycle</div>
+        </div>
+      </div>
+
+      <div class="milestone-section">
+        <div class="milestone-header">
+          <span class="milestone-label">NEXT MILESTONE</span>
+          <span class="milestone-count" id="milestone-remaining">20 animals remaining</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+          <div class="progress-text" id="progress-text">0 / 20</div>
+        </div>
+        <div class="milestone-reward-preview" id="milestone-reward-preview"></div>
+      </div>
+
+      <div class="section-title">SELL LOCATIONS</div>
+      <div class="locations-list" id="sell-locations">
+        <div class="location-item location-sell"><div class="location-dot"></div>Paleto Bay Butcher</div>
+        <div class="location-item location-sell"><div class="location-dot"></div>Sandy Shores Market</div>
+        <div class="location-item location-sell"><div class="location-dot"></div>Grapeseed Farmstead</div>
+      </div>
+
+      <div class="section-title" style="margin-top:16px">HUNTING AREAS</div>
+      <div class="locations-list" id="hunt-locations">
+        <div class="location-item"><div class="location-dot"></div>Chiliad Wilderness</div>
+        <div class="location-item"><div class="location-dot"></div>Alamo Badlands</div>
+        <div class="location-item"><div class="location-dot"></div>Paleto Forest</div>
+        <div class="location-item"><div class="location-dot"></div>Grand Senora Desert</div>
+        <div class="location-item"><div class="location-dot"></div>Vinewood Hills</div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-animals">
+      <div class="section-title">ANIMALS KILLED</div>
+      <div class="animal-grid" id="animal-grid">
+        <div class="empty-state">No animals harvested yet. Head out to the wilderness!</div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-goals">
+      <div class="section-title">MILESTONE REWARDS</div>
+      <div class="goals-list" id="goals-list"></div>
+    </div>
+
+    <div class="tab-content" id="tab-leaderboard">
+      <div class="leaderboard-header">
+        <div class="section-title">TOP HUNTERS</div>
+        <button class="refresh-btn" id="refreshLeaderboard">↻ Refresh</button>
+      </div>
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Hunter</th>
+            <th>Animals</th>
+            <th>Milestones</th>
+            <th>Earnings</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <tr><td colspan="5" class="empty-state">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
